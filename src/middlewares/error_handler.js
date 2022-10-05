@@ -1,6 +1,6 @@
+import mongoose from 'mongoose';
+import { CustomAPIError } from '../utils/custom_error.js';
 
-const { CustomAPIError } = require('./customError');
-const mongoose = require('mongoose');
 const ValidationError = mongoose.Error.ValidationError;
 const ValidatorError = mongoose.Error.ValidatorError;
 
@@ -21,5 +21,4 @@ const errorHandler = (err, req, res, next) => {
     return res.status(500).send({ message: "An error occured" })
 }
 
-
-module.exports = errorHandler
+export default errorHandler
